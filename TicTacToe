@@ -120,7 +120,7 @@ int main()
             }
         }
 
-        int row{}, column{}, count{ 1 };
+        int row{}, column{}, count{ 0 };
         char winner{ '?' };
         bool win = false;
         bool turn = ((rand() % 2) == 0);
@@ -137,15 +137,15 @@ int main()
             std::cout << "Enter row and column:";
             std::cin >> row >> column;
             std::cout << "\n";
-            if (count == boardSize * boardSize) {
-                std::cout << "Tied.\n";
-                break;
-            }
             if (row < boardSize && row >= 0 && column < boardSize && column >= 0 && board[row][column] == '?') {
                 ++count;
                 updateBoard(board, row, column, turn);
                 printBoard(board);
                 win = checkWin(board, row, column, winner);
+                if (count == boardSize * boardSize && !(win)) {
+                    std::cout << "Tied.\n";
+                    break;
+                }
             }
             else {
                 std::cout << "Invalid input!\n";
