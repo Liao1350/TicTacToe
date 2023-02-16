@@ -23,11 +23,13 @@
 - 隨機先後手
 
 利用系統時間做為random的seed，並隨機選取0和1兩數之中的某一數，抽到的就是先手。
+
 ![image](https://user-images.githubusercontent.com/124888991/219398815-693a5292-aed5-448f-b5ee-f521e6cae441.png)
 
 - 平手判定
 
 在main裡放置計數器，當計數器數到與棋盤格數相同時則表示平手。
+
 ![image](https://user-images.githubusercontent.com/124888991/219402701-24be608d-e6d2-41ea-b6fd-6c2f7a6b9b8e.png)
 
 ## 程式演示
