@@ -9,6 +9,9 @@ bool checkWin(const std::vector<std::vector<char>>& board, int row, int column, 
         if (board[row][i] == board[row][i - 1]) {
             ++count;
         }
+        else {
+            break;
+        }
         if (count == winCond) {
             winner = board[row][column];
             return true;
@@ -20,6 +23,9 @@ bool checkWin(const std::vector<std::vector<char>>& board, int row, int column, 
     for (int i = 1; i < winCond; ++i) {
         if (board[i][column] == board[i - 1][column]) {
             ++count;
+        }
+        else {
+            break;
         }
         if (count == winCond) {
             winner = board[row][column];
