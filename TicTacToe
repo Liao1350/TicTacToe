@@ -90,10 +90,9 @@ int main()
     std::vector<std::vector<char>> board{};
     int boardSize{};
     std::string ask_again{};
-    bool again{ true };
     srand(time(NULL));
 
-    while (again) {
+    while (true) {
         std::cout << "Insert board size:";
         while (std::cin >> boardSize) {
             if (boardSize >= 3) {
@@ -157,8 +156,9 @@ int main()
         std::cout << "Enter anything to continue, enter 'N' to end the game: ";
         std::cin >> ask_again;
         if (ask_again == "N") {
-            again = false;
-            std::cout << "Ending game...";
+            std::cout << "\nEnding game...";
+            break;
         }
+        std::cout << "\nStarting new game...\n\n";
     }
 }
